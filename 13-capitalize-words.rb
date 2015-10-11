@@ -9,6 +9,15 @@
 # Difficulty: medium.
 
 def capitalize_words(string)
+  string = string.split
+  i = 0
+  while i < string.length
+    capitalized_word = string[i]
+    capitalized_word[0] = capitalized_word[0].upcase
+    string[i] = capitalized_word
+    i += 1
+  end
+  return string.join(" ")
 end
 
 # These are tests to check that your code is working. After writing

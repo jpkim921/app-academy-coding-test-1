@@ -1,3 +1,4 @@
+require File.join File.dirname(__FILE__), '00-reverse.rb'
 # Write a method that takes a string and returns true if it is a
 # palindrome. A palindrome is a string that is the same whether written
 # backward or forward. Assume that there are no spaces; only lowercase
@@ -6,6 +7,7 @@
 # Difficulty: easy.
 
 def palindrome?(string)
+    return string == reverse(string)
 end
 
 # These are tests to check that your code is working. After writing

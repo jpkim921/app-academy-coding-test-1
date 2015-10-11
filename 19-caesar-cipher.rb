@@ -24,6 +24,20 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
+  ciphered = ""
+  i = 0
+  while i < string.length
+    if string[i] != " "
+      ascii = string[i].ord
+      ascii = ((ascii - 96 + offset) % 26) + 96
+      ciphered += ascii.chr
+    else
+      ciphered += " "
+    end
+    i += 1
+  end
+  
+  return ciphered
 end
 
 # These are tests to check that your code is working. After writing

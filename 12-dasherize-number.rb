@@ -7,7 +7,27 @@
 #
 # Difficulty: medium.
 
+def is_odd(num)
+  return num % 2 == 1
+end
+
 def dasherize_number(num)
+  num = num.to_s
+  result = ""
+  i = 0
+  
+  while i < num.length
+    current_digit = num[i]
+    if i > 0
+      last_digit = num[i-1]
+      if is_odd(last_digit.to_i) || is_odd(current_digit.to_i)
+        result += "-"
+      end
+    end
+    result += current_digit
+    i += 1
+  end
+  return result
 end
 
 # These are tests to check that your code is working. After writing

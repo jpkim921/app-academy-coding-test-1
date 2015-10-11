@@ -1,3 +1,4 @@
+require File.join File.dirname(__FILE__), '11-most-common-letter.rb'
 # Write a method that takes in a string and returns the number of
 # letters that appear more than once in the string. You may assume
 # the string contains only lowercase letters. Count the number of
@@ -7,6 +8,16 @@
 # Difficulty: hard.
 
 def num_repeats(string)
+    letter_count = get_letter_count(string)
+    i = 0
+    multiple_letter_count = 0
+    while i < letter_count.length
+        if letter_count[i][1] > 1
+            multiple_letter_count += 1
+        end
+        i += 1
+    end
+    return multiple_letter_count
 end
 
 # These are tests to check that your code is working. After writing

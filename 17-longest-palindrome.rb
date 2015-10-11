@@ -30,6 +30,24 @@ def palindrome?(string)
 end
 
 def longest_palindrome(string)
+  longest_length = 1
+  longest = string[0]
+  
+  i=0
+  j=2
+  while i < string.length
+    while j + i < string.length + 1
+      substring = string.slice(i,j)
+      if palindrome?(substring) && j > longest_length
+        longest_length = j
+        longest = substring
+      end
+      j += 1
+    end
+    i += 1
+    j=2
+  end
+  return longest
 end
 
 # These are tests to check that your code is working. After writing

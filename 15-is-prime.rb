@@ -13,6 +13,17 @@
 # Difficulty: medium.
 
 def is_prime?(number)
+    i=2
+    is_prime = true
+    #make sure that i != number
+    while i < number/2 + 1
+        if number % i == 0
+            is_prime = false
+            break
+        end
+        i += 1
+    end
+    return is_prime
 end
 
 # These are tests to check that your code is working. After writing

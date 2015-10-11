@@ -5,6 +5,21 @@
 # Difficulty: medium.
 
 def two_sum(nums)
+  i = 0
+  j = 0
+  positions = nil
+  while i < nums.length
+    while j < nums.length
+      if nums[i] + nums[j] == 0
+        positions = [i, j]
+        break
+      end
+      j = j + 1
+    end
+    i = i + 1
+    j = i
+  end
+  return positions
 end
 
 # These are tests to check that your code is working. After writing

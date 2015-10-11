@@ -5,6 +5,13 @@
 # Difficulty: medium.
 
 def scramble_string(string, positions)
+  scrambled = string.split("")
+  i = 0
+  while i < string.length
+    scrambled[i] = string[positions[i]]
+    i += 1
+  end
+  return scrambled.join("")
 end
 
 # These are tests to check that your code is working. After writing

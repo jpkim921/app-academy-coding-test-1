@@ -4,7 +4,24 @@
 #
 # Difficulty: medium.
 
+# make loops stop after finding z_after_a is true
 def nearby_az(string)
+    i=0
+    z_after_a = false
+    while i < string.length
+        if string[i] == "a"
+            j = 1
+            while j < 4 && j + i < string.length
+                if string[i+j] == "z"
+                    z_after_a = true
+                    break
+                end
+                j = j + 1
+            end
+        end
+        i=i+1
+    end
+    return z_after_a
 end
 
 # These are tests to check that your code is working. After writing
